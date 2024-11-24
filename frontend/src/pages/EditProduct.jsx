@@ -17,7 +17,7 @@ const EditProduct = () => {
     // Fetch o produto para editar
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`/api/products/${productId}`);
+        const response = await fetch(`https://controle-de-estoque-rust.vercel.app/api/products/${productId}`);
         const data = await response.json();
         setFormData(data);
       } catch (error) {
@@ -42,7 +42,7 @@ const EditProduct = () => {
     setError('');
 
     try {
-      const response = await fetch(`/api/products/${productId}`, {
+      const response = await fetch(`https://controle-de-estoque-rust.vercel.app/api/products/${productId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

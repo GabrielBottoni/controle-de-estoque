@@ -10,7 +10,7 @@ const Home = () => {
     // Fetch os produtos do backend
     const fetchProducts = async () => {
       try {
-        const response = await fetch('/api/products');
+        const response = await fetch('https://controle-de-estoque-rust.vercel.app/api/products');
         const data = await response.json();
         setProducts(data);
       } catch (error) {
@@ -23,9 +23,9 @@ const Home = () => {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`/api/products/${id}`, {
+      await fetch(`https://controle-de-estoque-rust.vercel.app/api/products/${id}`, {
         method: 'DELETE',
-      });
+      });      
       setProducts(products.filter((product) => product.id !== id)); // Remove o produto da lista local
     } catch (error) {
       console.error('Erro ao excluir produto:', error);
