@@ -27,7 +27,7 @@ const AddProduct = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/products', {
+      const response = await fetch('controle-de-estoque-rust.vercel.app/api/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
